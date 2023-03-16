@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 3. Homework (var.1 (table-form-button))</title>
+</head>
+
+<body>
+
+    <h1> Формы </h1>
+
+
+    <table border="0" cellspacing="0">
+
+        <form action="/Users/Jk87/VSC/22-02-2023/Homework 22-02-2023/index1.html" method="get" id="enter">
+
+            <tr>
+                <td colspan="2">
+                    <fieldset>
+                        <legend>Пользователь</legend>
+                        <label>Имя:
+                        <br>
+                        <input placeholder="Введите имя" type="text" name="name" required>
+                        </label>
+
+                        <br>
+                        <label>Email:
+                        <br>
+                        <input type="email" name="email">
+                        </label>    
+                        
+                        <br>
+                        <label>Мобильный:
+                        <br>
+                        <input type="tel" name="mobile">
+                        </label>
+
+                    </fieldset>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>Интересы</legend>
+                        <input type="checkbox" name="frontend" value="on" id="frontend" checked>
+                        <label for="frontend">FrontEnd</label>
+                        <br>
+
+                        <input type="checkbox" name="backend" value="on" id="backend" checked>
+                        <label for="backend">BackEnd</label>
+                        <br>
+
+                        <input type="checkbox" name="qa" value="on" id="qa" checked>
+                        <label for="qa">QA</label>
+                        <br>
+
+                        <input type="checkbox" name="database" value="on" id="database">
+                        <label for="database">Database</label>
+                        <br>
+
+                        <input type="checkbox" name="devops" value="on" id="devops">
+                        <label for="devops">DevOps</label>
+                    </fieldset>
+                </td>
+
+                <td>
+                    <fieldset> <!--Вопрос по ширине-->
+                        <legend>Занятия</legend>
+                        <input type="radio" name="time morning - evening" value="morning" id="morning">
+                        <label for="morning">Утром</label>
+
+                        <input type="radio" name="time morning - evening" value="evening" id="evening">
+                        <label for="evening">Вечером</label>
+
+                        <br>
+
+                        <input type="radio" name="time per week" value="3t" id="3t" checked>
+                        <label for="3t">3 раза в неделю</label>
+
+                        <input type="radio" name="time per week" value="everyday" id="everyday">
+                        <label for="everyday">каждый день</label>
+
+                    </fieldset>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    
+                        <label for="level">Выберите ваш уровень владения компьютером:</label>
+                        <select name="knowledge level" id="level" required>
+                            <option value=""> Выбрать из списка</option>
+                            <!--Вопрос по 1-му пункту, 0-й из списка убрать?-->
+                            <option value="1"> "Компьютер" - что это?</option>
+                            <option value="2"> Базовый </option>
+                            <option value="3"> Опытный пользователь </option>
+                            <option value="4"> Продвинутый </option>
+                            <option value="5"> Максимально возможный)</option>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    
+                        <label for="comments">Цели обучения:</label>
+                        <br>
+                        <textarea placeholder="Ваш комментарий" cols="60" rows="5" name="comments" maxlength="200" wrap="soft" id="comments"></textarea> <!--Вопрос как выровнять по ширине-->
+                    
+                </td>
+            </tr>
+
+        </form>
+    </table>
+
+    <input type="submit" value="Нажми" form="enter">
+
+</body>
+
+</html>
