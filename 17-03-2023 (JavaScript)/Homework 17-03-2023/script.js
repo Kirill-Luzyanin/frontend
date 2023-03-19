@@ -24,9 +24,8 @@ newBlockNews.appendChild(newBlockNewsTitle);
 
 
 // вариант с пустым div в index.html
-document.getElementById("news_empty").appendChild(newBlockNewsTitle, newBlockNewsSubtitle, newBlockNewsTime);
-
-document.getElementById("news_empty").appendChild(newBlockNewsTitle);
+//document.getElementById("news_empty").appendChild(newBlockNewsTitle, newBlockNewsSubtitle, newBlockNewsTime);
+//document.getElementById("news_empty").appendChild(newBlockNewsTitle);
 
 
 
@@ -46,8 +45,8 @@ console.log(divNewsId); // выводит первый попавшийся?
 let sportNews = document.querySelectorAll(".news_title");
 sportNews.forEach((element)=>{
     if(element.innerText == "спорт") {
-        sportNews.backgroundColor = "red";
-        //element.style.backgroundColor = "red"; // так меняется только у элемента фон..
+        //sportNews.backgroundColor = "red";
+        element.style.backgroundColor = "red"; // так меняется только у элемента фон.
     }
 }
 );
