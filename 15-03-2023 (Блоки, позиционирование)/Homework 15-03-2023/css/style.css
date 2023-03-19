@@ -30,7 +30,7 @@ body {
     height: 200px;
     background-size: contain;
     /*background-image: url(https://www.hockeydb.com/ihdb/photos/connor-mcdavid-2021-41.jpg);*/
-    background-image: url('/Users/Jk87/VSC/15-03-2023/Homework 15-03-2023/img/McDavid.jpeg');
+    background-image: url('//Users/Jk87/VSC/15-03-2023 (Блоки, позиционирование)/Homework 15-03-2023/img/McDavid.jpeg');
     background-repeat: no-repeat;
     position: absolute;
     left: 1000px;
