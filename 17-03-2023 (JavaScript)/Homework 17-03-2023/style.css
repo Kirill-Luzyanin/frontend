@@ -1,0 +1,76 @@
+body {
+    background-color :azure;
+    margin: 0;
+    font-size: 18px;
+}
+
+.block_main {
+    max-width: 1200px;
+    min-width: 400px;
+    width: 80vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    margin: auto;
+}
+
+.header {
+    color: gray;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.block_up {
+    width: 100%;
+}
+
+.block_up *{
+    padding-left: 50px;
+}
+
+.main_title {
+    padding-top: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    padding-left: 0px;
+}
+
+.inblock_up {
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    margin-top: -40px;
+    padding-top: 40px;
+    color: brown;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+.news {
+    margin: 5px;
+    padding-left: 15px;
+    padding-right: 10px;
+    background-color:aliceblue;
+    min-height: 90x;
+}
+
+
+.news_title {
+    padding-top: 5px;
+    color: blue;
+    font-size: 0.9em;
+}
+
+.news_subtitle {
+    padding-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.news_time {
+    font-size: 0.9em;
+    text-align: right;
+    color: green;
+}
