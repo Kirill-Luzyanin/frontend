@@ -15,7 +15,7 @@ console.log(a); // a - string value
 // console.log(b);
 // var b="text";
 
-const b="string";
+const b="string1";
 console.log(b);
 
 /*
@@ -36,10 +36,11 @@ let pWithClassNormalText = document.getElementsByClassName("normal-text");
 console.log(pWithClassNormalText);
 //console.log(pWithClassNormalText[1]);
 
+
 for(let index=0; index<pWithClassNormalText.length; index++){
     const element = pWithClassNormalText[index]; // свойства можем менять для const, а саму ее менять не можем
     console.log(element);
-    element.innerHTML=" [" + index + "] " + element.innerHTML;
+    element.innerHTML="[" + index + "] " + element.innerHTML;
 
 }
 
@@ -52,9 +53,20 @@ let pWithClassNormalText2 = document.querySelectorAll(".normal-text");
 pWithClassNormalText2.forEach((element)=>{
         console.log(element);
         if(element.textContent.length>100){
-        element.setAttribute("class", "selected-text");
+        element.setAttribute("class", "selected-text"); // изменение класса элементов
         }
     }
 );
 
+//pWithClassNormalText2[2].style.width="400px";
+pWithClassNormalText2[2].style.cssText="margin:auto; color: red; width:300px";
 
+const newParagraph = document.createElement("p");
+const text = document.createTextNode("Текстовое содержание нового абзаца");
+newParagraph.appendChild(text);
+document.body.appendChild(newParagraph);
+
+const newParagraph1 = document.createElement("p");
+const text1 = document.createTextNode("Макдэвид побил рекорд (новый блок)");
+newParagraph1.appendChild(text1);
+document.getElementById("qwe1").appendChild(newParagraph1);
