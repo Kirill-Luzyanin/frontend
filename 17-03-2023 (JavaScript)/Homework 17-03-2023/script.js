@@ -1,42 +1,49 @@
-const textNewsTitle = document.createTextNode("спорт");
-const textNewsSubtitle = document.createTextNode("Макдэвид побил рекорд по очкам для игроков в XXI веке");
-const textNewsTime = document.createTextNode("03:00");
+const strNewsTitle="Новость";
+const strNewsSubtitle="Макдэвид побил рекорд по очкам для игроков в XXI веке";
+const strNewsTime="03:00";
+
+///
+
+const news = document.createElement("div");
+//news.classList.add("news");
+news.setAttribute("class", "news");
 
 
-const newBlockNewsTitle = document.createElement("div");
-newBlockNewsTitle.classList.add("news_title");
-newBlockNewsTitle.appendChild(textNewsTitle);
+// div news_title
+const newsTitle = document.createElement("div");
+newsTitle.classList.add("news_title");
+//const textNewsTitle = document.createTextNode(strNewsTitle);
+//newsTitle.appendChild(textNewsTitle);
+newsTitle.textContent=strNewsTitle; // 15 и 16 строки заменили 17-ой
+news.appendChild(newsTitle);
 
-const newBlockNewsSubtitle = document.createElement("h3");
-newBlockNewsSubtitle.classList.add("news_subtitle");
-newBlockNewsSubtitle.appendChild(textNewsSubtitle);
+// h3
+const newsSubtitle = document.createElement("h3");
+newsSubtitle.classList.add("news_subtitle", "header");
+newsSubtitle.textContent=strNewsSubtitle;
+news.appendChild(newsSubtitle);
 
-const newBlockNewsTime = document.createElement("div");
-newBlockNewsTime.classList.add("news_time");
-newBlockNewsTime.appendChild(textNewsTime);
-
-
-const newBlockNews = document.createElement("div");
-//newBlockNews.setAttribute("class", "news");
-newBlockNews.classList.add("news");
-//newBlockNews.appendChild(newBlockNewsTitle, newBlockNewsSubtitle, newBlockNewsTime);
-newBlockNews.appendChild(newBlockNewsTitle);
-
-
-// вариант с пустым div в index.html
-//document.getElementById("news_empty").appendChild(newBlockNewsTitle, newBlockNewsSubtitle, newBlockNewsTime);
-//document.getElementById("news_empty").appendChild(newBlockNewsTitle);
+// div news_time
+const newsTime = document.createElement("div");
+newsTime.classList.add("news_time");
+newsTime.textContent=strNewsTime;
+news.appendChild(newsTime);
 
 
+const main = document.getElementsByClassName("block_main");
+main[0].appendChild(news);
 
+//document.body.appendChild(news);
+
+
+
+/*
 let divNews = document.getElementsByClassName("news");
 //console.log(divNews); //  выводит все три
 let divNewsId = document.getElementById("news");
 console.log(divNewsId); // выводит первый попавшийся?
 //divNews
-
-//document.body.getElementsByClassName("news").appendChild(newBlockNews);
-
+*/
 
 
 
@@ -45,8 +52,8 @@ console.log(divNewsId); // выводит первый попавшийся?
 let sportNews = document.querySelectorAll(".news_title");
 sportNews.forEach((element)=>{
     if(element.innerText == "спорт") {
-        //sportNews.backgroundColor = "red";
-        element.style.backgroundColor = "red"; // так меняется только у элемента фон.
+        element.parentElement.style.backgroundColor = "red"; 
+        element.parentElement.style.fontSize="25px";
     }
 }
 );
