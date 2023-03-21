@@ -59,7 +59,16 @@ document.querySelector("#btn1").addEventListener("click", ()=>{
 
 document.querySelector("#btn2").addEventListener("click", ()=>{
     
-  document.getElementsByClassName("block_main")[0].style.cssText = "font-size:10px"; 
+    document.getElementsByClassName("main_title")[0].style.cssText = "font-size:10px"; 
+    document.getElementsByClassName("subtitle")[0].style.cssText = "font-size:10px"; 
+  
+    let newss = document.getElementsByClassName("news");
+    for(let index=0; index<newss.length; index++){
+      const element = newss[index];
+    element.style.cssText = "font-size:10px"; 
+    }
+
   }
+
 );
 
