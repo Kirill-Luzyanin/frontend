@@ -1,72 +1,137 @@
-console.log("hello JavaScript");
-//alert("alert hello JS");
-console.log(2+5);
-console.log("2"+5);
-//console.log(console);
-//console.dir(console);
-
-let a=20;
-console.log(a); // a - переменная число
-a="string value";
-console.log(a); // a - string value
-
-//var - в Java определили и всё, а в JS будет переопределяться динамически
-// забываем var!!!
-// console.log(b);
-// var b="text";
-
-const b="string1";
-console.log(b);
-
 /*
-b="qwert";   // Uncaught TypeError: Assignment to constant variable. 
-console.log("hello");
+
+//parentElement.style.font-size ="19px"; // error
+parentElement.style.fontSize ="19px";    // ok camelCase
+parentElement.style.cssText = "font-size:19px; marggin:auto;";
+
 */
 
-// получение элемента по ID
-let header = document.getElementById("id_h1");
-console.log(header);
-console.dir(header);
-//header.innerText="JS!!!";
-header.innerText+="   Super!!!";
+
+/*
+        <div class="news">
+            <div class="tag">Здоровье</div>
+            <a href="https://ait-tr.de" target="_blank">
+                <h3 class="news-title header">О пользе прогулок для котят младшего возраста ... </h3>
+            </a>
+            <div class="time">17:21</div>
+        </div>
+*/
+
+/*
+// Добаввление элемента
+const element= document.createElement("div");
+const text = document.createTextNode("Test");
+element.setAttribute("class", "tag");
+element.appendChild(text);
+document.body.appendChild(element);
+*/
+
+const strTag="Новость";
+const strUrl="https://ait-tr.de";
+const strHeader="Новая Новость";
+const strTime="18:18";
+
+////
 
 
-// получение элементов по классу
-let pWithClassNormalText = document.getElementsByClassName("normal-text");
-console.log(pWithClassNormalText);
-//console.log(pWithClassNormalText[1]);
+const news = document.createElement("div");
+news.setAttribute("class", "news");
+
+// div tag
+const tag = document.createElement("div");
+tag.setAttribute("class", "tag");
+//const text = document.createTextNode(strTag);
+//tag.appendChild(text);
+tag.textContent=strTag;
+news.appendChild(tag);
+
+//a
+const link = document.createElement("a");
+link.href=strUrl;
+link.target="_blank";
+
+//h3
+const headeer = document.createElement("h3");
+headeer.textContent=strHeader;
+headeer.classList.add("news-title","header");
+link.appendChild(headeer);
+
+news.appendChild(link);
+
+const time = document.createElement("div");
+time.classList.add("time");
+time.textContent=strTime;
+news.appendChild(time);
+
+const days = document.getElementsByClassName("day");
+days[0].appendChild(news);
+
+//    [опорный элемент].insertAdjacentElement(" ", [блок]);
+// - beforebegin перед опорным блоком
+// - afterbegin в начало опорного блока
+// - beforeend в конец опорного блока
+// - afterend за опорным блоком
 
 
-for(let index=0; index<pWithClassNormalText.length; index++){
-    const element = pWithClassNormalText[index]; // свойства можем менять для const, а саму ее менять не можем
-    console.log(element);
-    element.innerHTML="[" + index + "] " + element.innerHTML;
+const pNews= days[0].querySelector(".date");
+pNews.insertAdjacentElement("afterend",news);
 
+//document.body.appendChild(news);
+
+let s="qwertyuiop["; // строка
+let s1='qwertyuiop['; // строка
+
+const htmlBlok = `
+    <div class="news">
+        <div class="tag">${strTag}</div>
+            <a href="${strUrl}" target="_blank">
+                <h3 class="news-title header">${strHeader}</h3>
+            </a>
+        <div class="time">${strTime}</div>
+    </div>
+`;
+
+pNews.insertAdjacentHTML("afterend",htmlBlok);
+
+/* // методы для вставки
+Let baseElement = getBy......
+baseElement.prepend();
+baseElement.append();
+baseElement.insertBefore();
+*/
+
+document.querySelector("#btn1").addEventListener("click", ()=>{
+  //pNews.style.cssText="background-color: green;";  
+  pNews.style.backgroundColor = "green";  
 }
-
-// по имени тега
-console.log(document.getElementsByTagName("p"));
-
-// получение элементов по css селектору
-console.log("-".repeat(30)+" querySelectorAll() " + "-".repeat(30));
-let pWithClassNormalText2 = document.querySelectorAll(".normal-text");
-pWithClassNormalText2.forEach((element)=>{
-        console.log(element);
-        if(element.textContent.length>100){
-        element.setAttribute("class", "selected-text"); // изменение класса элементов
-        }
-    }
 );
 
-//pWithClassNormalText2[2].style.width="400px";
-pWithClassNormalText2[2].style.cssText="margin:auto; color: red; width:300px";
+let n=10;
+console.log(n);
+console.log(typeof n);
 
-const newParagraph = document.createElement("p");
-const text = document.createTextNode("Текстовое содержание нового абзаца");
-newParagraph.appendChild(text);
-document.body.appendChild(newParagraph);
+n="qwerty";
+console.log(n);
+console.log(typeof n);
 
-const newParagraph1 = document.createElement("p");
-const text1 = document.createTextNode("Макдэвид побил рекорд (новый блок)");
-newParagraph1.appendChild(text1);
-document.getElementById("qwe1").appendChild(newParagraph1);
+n=console;
+console.log(n);
+console.log(typeof n);
+
+
+let j=Symbol("id");
+let j1=Symbol("id");
+console.log(j1==j);
+
+let n1=10;
+let n2="10";
+console.log("****************************************");
+console.log(n1==n2); // не строгое сравнение
+console.log(n1===n2); // строгое сравнение
+
+console.log("****************************************");
+console.log(n1+n2); 
+console.log(n1-n2);
+
+
+

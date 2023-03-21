@@ -47,33 +47,19 @@ const main = document.getElementsByClassName("block_main");
 const pNews = main[0].querySelector(".block_up");
 pNews.insertAdjacentElement("afterend", news);
 
-const htmlBlok = `
-    <div class="news">
-        <div class="news_title">${strNewsTitle}</div>
-            <h3 class="news_subtitle">${strNewsSubtitle}</h3>
-                <div class="news_time">${strNewsTime}</div>
-    </div>
-`;
-
-pNews.insertAdjacentHTML("afterend",htmlBlok);
-
-/*
-let divNews = document.getElementsByClassName("news");
-//console.log(divNews); //  выводит все три
-let divNewsId = document.getElementById("news");
-console.log(divNewsId); // выводит первый попавшийся?
-//divNews
-*/
 
 
-
-
-// -------------------------смена фона-------------------------------
-let sportNews = document.querySelectorAll(".news_title");
-sportNews.forEach((element)=>{
-    if(element.innerText == "спорт") {
-        element.parentElement.style.backgroundColor = "red"; 
-        element.parentElement.style.fontSize="25px";
-    }
-}
+document.querySelector("#btn1").addEventListener("click", ()=>{
+  
+    document.getElementsByClassName("block_main")[0].style.fontSize="30px";    
+   
+  }
 );
+
+
+document.querySelector("#btn2").addEventListener("click", ()=>{
+    
+  document.getElementsByClassName("block_main")[0].style.cssText = "font-size:10px"; 
+  }
+);
+
