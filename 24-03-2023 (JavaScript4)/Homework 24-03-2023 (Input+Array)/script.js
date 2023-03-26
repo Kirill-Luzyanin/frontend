@@ -1,20 +1,32 @@
 const users = [];
 
-function newUser(p1, p2) {
+function newUser(userName, userSurname) {
     let user = {
-        firstName: p1,
-        lastName: p2
+        firstName: userName,
+        lastName: userSurname
     }
-    users.push(user);
+    if (user.firstName !== '' && user.lastName !== '') {
+        users.push(user);
+    }
 }
 
+function printUsers() {
+    let list="";
+    for (let i = 0; i < users.length; i++) {
+        list += users[i].firstName + " " + users[i].lastName + ";" + '\n';
+        
+    }
+    console.log(list);
+}
+
+// кнопка 1
 document.getElementById("button_next").addEventListener("click",
     () => {
         // считывание значений из input:
-        //let name = document.getElementById("name_input-id").value;
-        //let surname = document.getElementById("surname_input-id").value;
-        let name = document.getElementsByTagName("input")[0].value; 
-        let surname = document.getElementsByTagName("input")[1].value; 
+        let name = document.getElementById("name_input-id").value;
+        let surname = document.getElementById("surname_input-id").value;
+        //let name = document.getElementsByTagName("input")[0].value; 
+        //let surname = document.getElementsByTagName("input")[1].value; 
         console.log(name);
         console.log(surname);
 
@@ -30,5 +42,13 @@ document.getElementById("button_next").addEventListener("click",
     }
 );
 
+// кнопка 2
+document.getElementById("button_finish").addEventListener("click",
+    () => {
+        // выполнение метода по выдаче списка:
+        printUsers();
+
+    }
+);
 
 
