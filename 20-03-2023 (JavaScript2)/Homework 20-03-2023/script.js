@@ -49,14 +49,17 @@ pNews.insertAdjacentElement("afterend", news);
 
 
 
+
+/////////// от сюда:
 document.querySelector("#btn1").addEventListener("click", ()=>{
   
-    document.getElementsByClassName("block_main")[0].style.fontSize="30px";    
+    document.getElementsByClassName("block_main")[0].style.fontSize="45px";    
    
   }
 );
 
-
+// для кнопки 2(уменьшение)
+// тут уже пришлось отдельно для каждого класса
 document.querySelector("#btn2").addEventListener("click", ()=>{
     
     document.getElementsByClassName("main_title")[0].style.cssText = "font-size:10px"; 

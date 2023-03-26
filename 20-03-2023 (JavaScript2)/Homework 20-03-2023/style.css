@@ -1,7 +1,7 @@
 body {
     background-color :azure;
     margin: 0;
-    font-size: 18px;
+    /*font-size: 18px;*/
 }
 
 .block_main {
@@ -19,7 +19,7 @@ body {
     color: gray;
     font-weight: 400;
     font-style: italic;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 .block_up {
@@ -45,7 +45,7 @@ body {
     padding-top: 40px;
     color: brown;
     font-style: italic;
-    font-size: 1.2em;
+    /*font-size: 1.2em;*/
 }
 
 .news {
@@ -60,7 +60,7 @@ body {
 .news_title {
     padding-top: 5px;
     color: blue;
-    font-size: 0.9em;
+    /*font-size: 0.9em;*/
 }
 
 .news_subtitle {
@@ -70,7 +70,7 @@ body {
 }
 
 .news_time {
-    font-size: 0.9em;
+    /*font-size: 0.9em;*/
     text-align: right;
     color: green;
 }
