@@ -1,38 +1,37 @@
-function makeUser(name,surname) {
+function newUser(p1, p2) {
     return {
-        firstName: name,
-        lastName: surname
+        firstName: p1,
+        lastName: p2
     }
 }
 
-function addToArray(){
-    const users = [];
-    //users.length=20;
-    for (let index = 0; index < 10; index++) {
-        users.push(users[index]);
-        console.log(users[index]);
-    }
- }
+const users = [];
+
+function addToArray(p1, p2) {
+    return users.push(newUser(p1, p2));
+}
 
 document.getElementById("button_next").addEventListener("click",
     () => {
+        // считывание значений из input:
         let name = document.getElementById("name_input-id").value;
         let surname = document.getElementById("surname_input-id").value;
         //let name = document.getElementByTagName("input")[0].value; // почему так не работает???
-        //let surname = document.getElementByTagName("input")[1].value;
-        
-        makeUser(name,surname);
-        console.log(makeUser(name,surname)); 
-        
+        //let surname = document.getElementByTagName("input")[1].value; // почему так не работает???
+
+        // выполнение метода по созданию нового пользователя:
+        newUser(name, surname);
+        console.log(newUser(name, surname));
+
+        // выполнение метода по добавлению нового пользователя в массив:
         addToArray(name, surname);
-        console.log(addToArray());
+        console.log(addToArray(name, surname));
 
         //document.querySelector('input').value = ''; ///Если так, то только одно поле очищается. All не работает.
-        // как правильно обнулять input-placeholder
+        // как правильно обнулять input-placeholder?
         document.getElementById("name_input-id").value = '';
         document.getElementById("surname_input-id").value = '';
 
-        
     }
 );
 
