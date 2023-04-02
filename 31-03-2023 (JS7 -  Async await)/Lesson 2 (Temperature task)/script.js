@@ -25,14 +25,16 @@ async function getLocation() {
     //res.latitude = data.latitude;
     //res.longitude = data.longitude;
     
-    res["city"]=output1;
-    data.city=output1;
-    console.log(output1);
+    //res["city"]=output1;
+    //data.city=output1;
+    //console.log(output1);
 
     console.log(res);
     return res;
 
 }
+
+document.getElementById("resultgeo")=await getLocation().city;
 
 function getWeatherByCode(code){
     switch(code){
@@ -66,6 +68,10 @@ async function getMetio(){
 
 
 btnLocation.addEventListener("click", getLocation);
+
+btnWeather.addEventListener("click", getMetio);
+
+
 
 /*
 const promiseRes = getLocation();
