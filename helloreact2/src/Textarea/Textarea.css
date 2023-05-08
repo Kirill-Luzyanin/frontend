@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(139, 132, 124);
+}
+
+textarea {
+    padding: 10px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    right: auto;
+    background-color: rgb(218, 211, 203);
+    font-weight: bold;
+    width: 300px;
+    text-align: left;
+    
+}
